@@ -1,0 +1,16 @@
+{
+  "name": "gymapptrayenel",
+  "version": "1.0.0",
+  "description": "My awesome gym app",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "Trayenel/aplicatieSala"
+  },
+  "author": "Trayenel",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Title</title>
+  </head>
+  <body>gi
+    <div class="container">
+      <div class="sidebar">
+        <a class="track-view-btn" href="">Track</a>
+        <a class="calendar-view-btn" href="">Calendar</a>
+        <a href="#">Clients</a>
+        <a href="#">About</a>
+      </div>
+      <div class="navbar">
+        <button class="settings-btn">
+          <svg
+            class="icon"
+            data-slot="icon"
+            aria-hidden="true"
+            fill="none"
+            stroke-width="1.5"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+        <div class="navbar-left ">
+          <h1 class="month"></h1>
+          <button>rest</button>
+          <button>skipped</button>
+          <button>unlogged</button>
+        </div>
+        <div class="navbar-right ">
+          <button class="btn-left">&#8592;</button>
+          <button>Today</button>
+          <button class="btn-right">&#8594;</button>
+        </div>
+      </div>
+      <table class="calendar ">
+        <thead>
+          <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="workout-modal hidden">
+        <div class="modal-window">
+          <button class="close-btn">close</button>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <script type="module" src="../js/controller.js"></script>
+  </body>
+</html>
