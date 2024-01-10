@@ -61,6 +61,7 @@ body {
   font-size: 1.44rem;
   color: #818181;
   display: block;
+  cursor: pointer;
   transition: 0.3s;
 }
 
