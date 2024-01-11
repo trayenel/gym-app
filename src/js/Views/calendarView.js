@@ -3,7 +3,7 @@ class CalendarView {
   _monthText = document.querySelector(".month");
 
   toggleCalendar() {
-    this._calendar.classList.toggle('hidden')
+    this._calendar.classList.toggle("hidden");
   }
 
   renderDates(model) {

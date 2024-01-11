@@ -8,22 +8,22 @@ const controlNav = function () {
 };
 
 const controlView = function () {
-  calendarView.toggleCalendar()
-}
+  calendarView.toggleCalendar();
+};
 
 const controlModal = function () {
-  modalView.showModal()
-}
+  modalView.showModal();
+};
 
 function init() {
   navView.showSidebar();
   navView.hideSidebar();
   navView.changeMonth(app);
   calendarView.renderDates(app);
-  calendarView.addHandlerRender(controlModal)
+  calendarView.addHandlerRender(controlModal);
   navView.addHandlerRender(controlNav);
-  modalView.closeModal()
-  navView.sidebarChooseView(controlView)
+  modalView.closeModal();
+  navView.sidebarChooseView(controlView);
 }
 
 init();
