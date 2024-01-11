@@ -1,7 +1,7 @@
 {
   "name": "gym-app",
   "version": "1.0.0",
-  "description": "My awesome gym-app",
+  "description": "My awesome gym app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/trayenel/gym-app/issues"
   },
-  "homepage": "https://github.com/trayenel/gym-app#readme"
+  "homepage": "https://github.com/trayenel/gym-app#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
