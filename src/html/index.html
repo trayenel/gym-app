@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <link rel="stylesheet" href="../css/style.css" >
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Title</title>
   </head>
   <body>
     <div class="container">
-      <div class="sidebar">
+      <aside class="sidebar">
         <a class="track-view-btn">Track</a>
         <a class="calendar-view-btn">Calendar</a>
         <a>Clients</a>
         <a>About</a>
-      </div>
-      <div class="navbar">
+      </aside>
+      <section class="navbar">
         <button class="settings-btn">
           <svg
             class="icon"
@@ -32,19 +32,19 @@
             ></path>
           </svg>
         </button>
-        <div class="navbar-left">
+        <div class="navbar-left hidden">
           <h1 class="month">luna</h1>
           <button>rest</button>
           <button>skipped</button>
           <button>unlogged</button>
         </div>
-        <div class="navbar-right">
+        <div class="navbar-right hidden">
           <button class="btn-left">&#8592;</button>
           <button>Today</button>
           <button class="btn-right">&#8594;</button>
         </div>
-      </div>
-      <table class="calendar">
+      </section>
+      <table class="calendar hidden">
         <thead>
           <tr>
             <th>Monday</th>
@@ -113,6 +113,21 @@
           </tr>
         </tbody>
       </table>
+      <section class="track-view">
+        <aside class="track-menu">
+          <h2>Workouts</h2>
+          <p class="workout">pula</p>
+          <p class="workout">pula</p>
+          <p class="workout">pula</p>
+          <p class="workout">pula</p>
+        </aside>
+        <div class="tracker">
+          <form action="">
+            <label for="search">Search</label>
+            <input type="text" id="search">
+          </form>
+        </div>
+      </section>
       <div class="workout-modal hidden">
         <div class="modal-window">
           <button class="close-btn">close</button>

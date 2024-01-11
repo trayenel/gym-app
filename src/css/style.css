@@ -44,7 +44,7 @@ body {
 .sidebar {
   position: absolute;
   width: 0;
-  height: 100vh;
+  height: 100%;
   z-index: 1;
   transition: 0.5s;
   overflow-x: hidden;
@@ -120,8 +120,36 @@ td {
   position: relative;
 }
 
-.hidden {
-  display: none;
+.track-view {
+  height: 94%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-menu {
+  box-shadow: 8px 13px 20px 5px rgba(0, 0, 0, 0.13);
+  height: 100%;
+  width: 25%;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tracker {
+  margin-right: 15%;
+  height: 80%;
+  width: 50%;
+  background-color: black;
+}
+
+.workout {
+  border-radius: 5px;
+  text-align: center;
+  width: 85%;
+  height: 20%;
+  background-color: black;
 }
 
 .overlay {
