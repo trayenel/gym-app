@@ -1,16 +1,19 @@
 {
-  "name": "gymapptrayenel",
+  "name": "gym-app",
   "version": "1.0.0",
-  "description": "My awesome gym app",
+  "description": "My awesome gym-app",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "Trayenel/aplicatieSala"
+    "url": "git+https://github.com/trayenel/gym-app.git"
   },
-  "author": "Trayenel",
+  "author": "trayenel",
   "license": "ISC",
-  "devDependencies": {
-    "prettier": "^3.1.1"
-  }
+  "bugs": {
+    "url": "https://github.com/trayenel/gym-app/issues"
+  },
+  "homepage": "https://github.com/trayenel/gym-app#readme"
 }
