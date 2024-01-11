@@ -6,10 +6,9 @@ class CalendarView {
     this._calendar.classList.toggle("hidden");
   }
 
-  renderDates(model) {
+  renderDates(app) {
     /*First import the date variables from the calcDate function*/
-    const [paddingDays, daysInMonth, year, month, months] =
-      model.calculateDate();
+    const [paddingDays, daysInMonth, year, month, months] = app.calculateDate();
 
     /*Render the month using the current month and the index of the months array*/
     this._monthText.innerHTML = months[month];
