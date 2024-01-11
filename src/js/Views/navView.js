@@ -13,7 +13,7 @@ class navView {
     });
   }
 
-  sidebarChooseView(calendar) {
+  sidebarChooseView(handler) {
     this._sidebar.addEventListener(
       "click",
       function (e) {
@@ -25,7 +25,7 @@ class navView {
           ) {
             this._navbar.children[1].classList.toggle("hidden");
             this._navbar.children[2].classList.toggle("hidden");
-            calendar();
+            handler();
           }
         } else if (e.target.classList.contains("calendar-view-btn")) {
           if (
@@ -34,7 +34,7 @@ class navView {
           ) {
             this._navbar.children[1].classList.toggle("hidden");
             this._navbar.children[2].classList.toggle("hidden");
-            calendar();
+            handler();
           }
         }
       }.bind(this),

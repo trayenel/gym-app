@@ -1,10 +1,8 @@
-class CalendarView {
-  _calendar = document.querySelector(".calendar");
-  _monthText = document.querySelector(".month");
+import View from './View.js'
 
-  toggleCalendar() {
-    this._calendar.classList.toggle("hidden");
-  }
+class CalendarView extends View {
+  _main = document.querySelector(".calendar");
+  _monthText = document.querySelector(".month");
 
   renderDates(app) {
     /*First import the date variables from the calcDate function*/
@@ -14,7 +12,7 @@ class CalendarView {
     this._monthText.innerHTML = months[month];
 
     /*Render the calendar taking into account the padding days and total days of the month*/
-    const table = this._calendar.children[1];
+    const table = this._main.children[1];
 
     for (let i = 0; i < 6; i++) {
       let row = table.rows[i];
@@ -40,7 +38,7 @@ class CalendarView {
   }
 
   addHandlerRender(handler) {
-    this._calendar.addEventListener("click", function (e) {
+    this._main.addEventListener("click", function (e) {
       if (e.target.classList.contains("day")) {
         handler();
       }
@@ -48,7 +46,7 @@ class CalendarView {
   }
 
   /*renderWorkoutView() {
-    this._calendar.addEventListener("click", function (e) {
+    this._main.addEventListener("click", function (e) {
       if (e.target.classList.contains("day")) {
         return e.target.textContent;
       }
