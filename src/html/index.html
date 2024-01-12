@@ -32,6 +32,10 @@
             ></path>
           </svg>
         </button>
+        <form class="navbar-center" action="">
+          <label for="search"></label>
+          <input id="search" type="search" placeholder="Search" />
+        </form>
         <div class="navbar-left hidden">
           <h1 class="month">luna</h1>
           <button>rest</button>
@@ -114,19 +118,28 @@
         </tbody>
       </table>
       <section class="track-view">
-        <aside class="track-menu">
+        <aside class="tracker">
           <h2>Workouts</h2>
-          <p class="workout">pula</p>
-          <p class="workout">pula</p>
-          <p class="workout">pula</p>
-          <p class="workout">pula</p>
+          <p class="workout">
+            <svg
+              class="icon"
+              data-slot="icon"
+              aria-hidden="true"
+              fill="none"
+              stroke-width="1.5"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4.5v15m7.5-7.5h-15"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </p>
         </aside>
-        <div class="tracker">
-          <form action="">
-            <label for="search">Search</label>
-            <input type="text" id="search">
-          </form>
-        </div>
+        <div class="track-menu"><p class="exercice"></p></div>
       </section>
       <div class="workout-modal hidden">
         <div class="modal-window">

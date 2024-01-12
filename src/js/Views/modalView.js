@@ -1,21 +1,21 @@
 class modalView {
-  _window = document.querySelector(".workout-modal");
+  _main = document.querySelector(".workout-modal");
 
   closeModal() {
-    this._window.addEventListener(
+    this._main.addEventListener(
       "click",
       function (e) {
         if (
           e.target.classList.contains("close-btn") ||
           e.target.classList.contains("overlay")
         ) {
-          this._window.classList.toggle("hidden");
+          this._main.classList.toggle("hidden");
         }
       }.bind(this),
     );
   }
   showModal() {
-    this._window.classList.toggle("hidden");
+    this._main.classList.toggle("hidden");
   }
 }
 

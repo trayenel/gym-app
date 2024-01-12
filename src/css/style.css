@@ -1,5 +1,5 @@
 /*
-main color: #40c057
+main color: #862e9c
 accent: #ffd1d1
 grey: #495057
 */
@@ -34,10 +34,21 @@ body {
   margin-right: auto;
 }
 
+.navbar-center {
+  margin-left: auto;
+  margin-right: 50%;
+}
+
+.navbar-center input {
+  padding: 7px;
+  width: 300%;
+  border-radius: 5px;
+  border: none;
+}
+
 .navbar-right {
   display: flex;
   align-items: flex-end;
-  margin-left: auto;
   margin-right: 0.3125rem;
 }
 
@@ -121,38 +132,59 @@ td {
 }
 
 .track-view {
+  margin: auto;
   height: 94%;
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: space-between;
   color: #495057;
+  background-color: white;
+  box-shadow: 4px 8px 20px 0 rgba(0, 0, 0, 0.17);
 }
 
 .track-menu {
-  box-shadow: 8px 13px 20px 5px rgba(0, 0, 0, 0.13);
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  flex-direction: column;
+  margin-right: 15%;
+  width: 75%;
+}
+
+.exercice {
+  border-radius: 5px;
+  width: 85%;
+  box-shadow: 4px 8px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.tracker {
   height: 100%;
   width: 25%;
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .workout {
   border-radius: 5px;
   text-align: center;
   width: 85%;
-  height: 20%;
-  border: solid black 1px;
+  height: 10%;
+  box-shadow: 4px 8px 20px 0 rgba(0, 0, 0, 0.17);
 }
 
-.tracker {
-  border-radius: 5px;
-  align-self: center;
-  margin-right: 15%;
-  height: 80%;
-  width: 50%;
-  background-color: olivedrab;
+.workout .icon {
+  stroke-width: 1;
+  stroke: black;
+  width: 32px;
+  height: 32px;
+}
+
+.search {
+  padding: 10px;
+  border: black 1px solid;
 }
 
 .overlay {
