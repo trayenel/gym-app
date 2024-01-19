@@ -1,4 +1,4 @@
-import View from './View.js'
+import View from "./View.js";
 
 class CalendarView extends View {
   _main = document.querySelector(".calendar");

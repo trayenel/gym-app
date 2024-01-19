@@ -2,7 +2,7 @@ import * as app from "./app.js";
 import calendarView from "./Views/calendarView.js";
 import navView from "./Views/navView.js";
 import modalView from "./Views/modalView.js";
-import trackView from "./Views/trackView.js"
+import trackView from "./Views/trackView.js";
 
 const controlNav = function () {
   calendarView.renderDates(app);
@@ -10,7 +10,7 @@ const controlNav = function () {
 
 const controlView = function () {
   calendarView.toggleView();
-  trackView.toggleView()
+  trackView.toggleView();
 };
 
 const controlModal = function () {
