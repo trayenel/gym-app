@@ -17,6 +17,11 @@ const controlModal = function () {
   modalView.showModal();
 };
 
+const addWorkout = function () {
+  trackView.addWorkout()
+
+}
+
 function init() {
   navView.showSidebar();
   navView.hideSidebar();
@@ -26,6 +31,7 @@ function init() {
   modalView.closeModal();
   calendarView.renderDates(app);
   calendarView.addHandlerRender(controlModal);
+  trackView.addHandler(addWorkout)
 }
 
 init();
