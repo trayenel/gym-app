@@ -21,11 +21,11 @@ function init() {
   navView.showSidebar();
   navView.hideSidebar();
   navView.changeMonth(app);
-  calendarView.renderDates(app);
-  calendarView.addHandlerRender(controlModal);
+  navView.sidebarChooseView(controlView);
   navView.addHandlerRender(controlNav);
   modalView.closeModal();
-  navView.sidebarChooseView(controlView);
+  calendarView.renderDates(app);
+  calendarView.addHandlerRender(controlModal);
 }
 
 init();

@@ -168,16 +168,19 @@ td {
 }
 
 .workout {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
-  text-align: center;
   width: 85%;
   height: 10%;
   box-shadow: 4px 8px 20px 0 rgba(0, 0, 0, 0.17);
 }
 
-.workout .icon {
+.add-workout .icon  {
   stroke-width: 1;
-  stroke: black;
+  stroke: #862e9c;
   width: 32px;
   height: 32px;
 }
@@ -204,6 +207,10 @@ td {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+.active {
+  border: 1px #862e9c solid;
 }
 
 .hidden {
