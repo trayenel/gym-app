@@ -25,6 +25,9 @@ class TrackView extends View {
   }
 
   nameWorkout() {
+    if (this._workout?.classList.contains("active"))
+      this._workout.classList.toggle("active");
+
     this._workout = document.querySelector(".workout.active");
 
     this._submit = document.querySelector(".submitWorkout.active");
@@ -33,7 +36,6 @@ class TrackView extends View {
       "keydown",
       function (e) {
         if (e.key === "Enter") {
-          this._workout.classList.toggle("active");
           this._submit.classList.toggle("active");
           this._workout.innerHTML = this._submit.value;
         }
