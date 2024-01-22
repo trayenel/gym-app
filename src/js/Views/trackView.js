@@ -36,8 +36,32 @@ class TrackView extends View {
       "keydown",
       function (e) {
         if (e.key === "Enter") {
+          if (this._submit.value !== "") {
+            this._submit.classList.toggle("active");
+            this._workout.innerHTML = this._submit.value;
+          }
+        }
+        if (e.key === "Escape") {
           this._submit.classList.toggle("active");
-          this._workout.innerHTML = this._submit.value;
+          this._workout.remove()
+        }
+      }.bind(this),
+    );
+  }
+
+  selectWorkout() {
+    this._tracker.addEventListener(
+      "click",
+      function (e) {
+        if (e.target.classList.contains("workout.active")) return;
+        if (
+          e.target.classList.contains("workout") &&
+          !e.target.classList.contains("active") &&
+          !this._submit.classList.contains("active")
+        ) {
+          this._workout.classList.toggle("active");
+          this._workout = e.target;
+          this._workout.classList.toggle("active");
         }
       }.bind(this),
     );

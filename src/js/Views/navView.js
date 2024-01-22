@@ -20,23 +20,19 @@ class navView {
         e.preventDefault();
         if (e.target.classList.contains("track-view-btn")) {
           if (
-            !this._navbar.children[2].classList.contains("hidden") &&
-            !this._navbar.children[3].classList.contains("hidden") &&
-            this._navbar.children[1].classList.contains("hidden")
+            !this._navbar.children[1].classList.contains("hidden") &&
+            !this._navbar.children[2].classList.contains("hidden")
           ) {
             this._navbar.children[2].classList.toggle("hidden");
-            this._navbar.children[3].classList.toggle("hidden");
             this._navbar.children[1].classList.toggle("hidden");
             handler();
           }
         } else if (e.target.classList.contains("calendar-view-btn")) {
           if (
-            this._navbar.children[2].classList.contains("hidden") &&
-            this._navbar.children[3].classList.contains("hidden") &&
-            !this._navbar.children[1].classList.contains("hidden")
+            this._navbar.children[1].classList.contains("hidden") &&
+            this._navbar.children[2].classList.contains("hidden")
           ) {
             this._navbar.children[2].classList.toggle("hidden");
-            this._navbar.children[3].classList.toggle("hidden");
             this._navbar.children[1].classList.toggle("hidden");
             handler();
           }
@@ -53,11 +49,11 @@ class navView {
   }
 
   addHandlerRender(functzie) {
-    this._navbar.children[3].addEventListener("click", functzie);
+    this._navbar.children[2].addEventListener("click", functzie);
   }
 
   changeMonth(model) {
-    this._navbar.children[3].addEventListener("click", function (e) {
+    this._navbar.children[2].addEventListener("click", function (e) {
       if (e.target.classList.contains("btn-right")) {
         model.increaseMonth();
       } else if (e.target.classList.contains("btn-left")) {

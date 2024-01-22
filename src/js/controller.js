@@ -32,6 +32,7 @@ function init() {
   calendarView.renderDates(app);
   calendarView.addHandlerRender(controlModal);
   trackView.addHandler(addWorkout)
+  trackView.selectWorkout()
 }
 
 init();
