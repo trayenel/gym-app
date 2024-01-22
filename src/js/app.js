@@ -14,10 +14,6 @@ export const state = {
     "November",
     "December",
   ],
-  _workouts: [],
-  _selectedWorkout: null,
-  _selectedYear: new Date().getFullYear(),
-  _selectedMonth: new Date().getMonth(),
   _weekdays: [
     "Monday",
     "Tuesday",
@@ -27,6 +23,10 @@ export const state = {
     "Saturday",
     "Sunday",
   ],
+  _workouts: new Map(),
+  _selectedWorkout: null,
+  _selectedYear: new Date().getFullYear(),
+  _selectedMonth: new Date().getMonth(),
 };
 
 export const today = function () {
@@ -79,10 +79,15 @@ export const calculateDate = function (
   return [paddingDays, daysInMonth, year, month, state._months];
 };
 
-export const createNewWorkout = function (name) {
+export const createNewWorkout = function (id, name) {
   const workout = {
     name: name,
-    id: Math.random().toString(36).slice(2, 9),
   };
-  state._workouts.push(workout);
+  state._workouts.set(`${id}`, workout);
 };
+
+export const stateWorkoutSelect = function (workout) {
+  state._selectedWorkout = state._workouts.get(workout);
+};
+
+export const editWorkout = function (ex) {};
