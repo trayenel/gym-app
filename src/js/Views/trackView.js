@@ -1,3 +1,4 @@
+import * as app from "../app.js"
 import View from "./View.js";
 
 class TrackView extends View {
@@ -40,6 +41,7 @@ class TrackView extends View {
           if (this._submit.value !== "") {
             this._submit.classList.toggle("active");
             this._workout.innerHTML = this._submit.value;
+            app.createNewWorkout(this._workout.innerHTML)
           }
         }
         if (e.key === "Escape") {

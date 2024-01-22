@@ -15,7 +15,7 @@ export const state = {
     "December",
   ],
   _workouts: [],
-  _clicked: null,
+  _selectedWorkout: null,
   _selectedYear: new Date().getFullYear(),
   _selectedMonth: new Date().getMonth(),
   _weekdays: [
@@ -77,4 +77,12 @@ export const calculateDate = function (
   const paddingDays = state._weekdays.indexOf(dateString.split(", ")[0]);
 
   return [paddingDays, daysInMonth, year, month, state._months];
+};
+
+export const createNewWorkout = function (name) {
+  const workout = {
+    name: name,
+    id: Math.random().toString(36).slice(2, 9),
+  };
+  state._workouts.push(workout);
 };

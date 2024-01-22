@@ -38,4 +38,9 @@ function init() {
   trackView.selectWorkout();
 }
 
+document.querySelector('.mama').addEventListener('click', function (e) {
+  e.preventDefault()
+  console.log(app.state)
+})
+
 init();
