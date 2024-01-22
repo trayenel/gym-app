@@ -8,6 +8,12 @@ const controlNav = function () {
   calendarView.renderDates(app);
 };
 
+const controlSidebar = function () {
+  navView.showSidebar();
+  navView.hideSidebar();
+  navView.sidebarChooseView(controlView);
+};
+
 const controlView = function () {
   calendarView.toggleView();
   trackView.toggleView();
@@ -18,21 +24,18 @@ const controlModal = function () {
 };
 
 const renderWorkout = function () {
-  trackView.renderWorkout()
-
-}
+  trackView.renderWorkout();
+};
 
 function init() {
-  navView.showSidebar();
-  navView.hideSidebar();
-  navView.changeMonth(app);
-  navView.sidebarChooseView(controlView);
-  navView.addHandlerRender(controlNav);
+  controlSidebar();
   modalView.closeModal();
+  navView.changeMonth(app);
+  navView.addHandlerRender(controlNav);
   calendarView.renderDates(app);
   calendarView.addHandlerRender(controlModal);
-  trackView.addHandler(renderWorkout)
-  trackView.selectWorkout()
+  trackView.addHandlerRender(renderWorkout);
+  trackView.selectWorkout();
 }
 
 init();

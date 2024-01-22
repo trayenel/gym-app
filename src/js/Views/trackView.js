@@ -6,7 +6,7 @@ class TrackView extends View {
   _workoutAdder = document.querySelector(".add-workout");
   _workout;
   _submit;
-  addHandler(handler) {
+  addHandlerRender(handler) {
     this._tracker.addEventListener("click", function (e) {
       if (e.target.classList.contains("icon")) handler();
     });

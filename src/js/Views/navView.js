@@ -13,6 +13,13 @@ class navView {
     });
   }
 
+  hideSidebar() {
+    this._sidebar.addEventListener("mouseleave", function (e) {
+      e.preventDefault();
+      document.querySelector(".sidebar").style.width = "0";
+    });
+  }
+
   sidebarChooseView(handler) {
     this._sidebar.addEventListener(
       "click",
@@ -39,13 +46,6 @@ class navView {
         }
       }.bind(this),
     );
-  }
-
-  hideSidebar() {
-    this._sidebar.addEventListener("mouseleave", function (e) {
-      e.preventDefault();
-      document.querySelector(".sidebar").style.width = "0";
-    });
   }
 
   addHandlerRender(functzie) {
