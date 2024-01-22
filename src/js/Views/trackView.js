@@ -12,7 +12,7 @@ class TrackView extends View {
     });
   }
 
-  addWorkout() {
+  renderWorkout() {
     const htmltext = `<span class="workout active"
             ><label for="submitWorkout"></label>
             <input type="text" class="submitWorkout active"
@@ -32,6 +32,7 @@ class TrackView extends View {
 
     this._submit = document.querySelector(".submitWorkout.active");
 
+    this._submit.focus();
     this._submit.addEventListener(
       "keydown",
       function (e) {
@@ -43,7 +44,7 @@ class TrackView extends View {
         }
         if (e.key === "Escape") {
           this._submit.classList.toggle("active");
-          this._workout.remove()
+          this._workout.remove();
         }
       }.bind(this),
     );

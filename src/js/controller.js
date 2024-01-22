@@ -17,8 +17,8 @@ const controlModal = function () {
   modalView.showModal();
 };
 
-const addWorkout = function () {
-  trackView.addWorkout()
+const renderWorkout = function () {
+  trackView.renderWorkout()
 
 }
 
@@ -31,7 +31,7 @@ function init() {
   modalView.closeModal();
   calendarView.renderDates(app);
   calendarView.addHandlerRender(controlModal);
-  trackView.addHandler(addWorkout)
+  trackView.addHandler(renderWorkout)
   trackView.selectWorkout()
 }
 
