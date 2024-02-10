@@ -28,7 +28,7 @@ export const state = {
   _selectedYear: new Date().getFullYear(),
   _selectedMonth: new Date().getMonth(),
 };
-
+// cc
 export const today = function () {
   state._selectedYear = new Date().getFullYear();
   state._selectedMonth = new Date().getMonth();
