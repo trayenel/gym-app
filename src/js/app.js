@@ -53,6 +53,7 @@ export const decreaseMonth = function () {
 export const calculateDate = function (
   year = state._selectedYear,
   month = state._selectedMonth,
+  day = new Date().getDate()
 ) {
   /*We calculate the total amount of days in a month by referring to the next month from which we subtract one day and the current month's first day*/
   const firstDayInMonth = new Date(
@@ -76,7 +77,7 @@ export const calculateDate = function (
 
   const paddingDays = state._weekdays.indexOf(dateString.split(", ")[0]);
 
-  return [paddingDays, daysInMonth, year, month, state._months];
+  return [paddingDays, daysInMonth, year, month, state._months, day];
 };
 
 export const createNewWorkout = function (id, name) {
@@ -90,4 +91,7 @@ export const stateWorkoutSelect = function (workout) {
   state._selectedWorkout = state._workouts.get(workout);
 };
 
-export const editWorkout = function (ex) {};
+export const addExercice = function (ex) {
+  if (!state._selectedWorkout.Exercices) state._selectedWorkout.Exercices = []
+  state._selectedWorkout?.Exercices.push(ex)
+};

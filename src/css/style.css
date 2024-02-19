@@ -149,6 +149,14 @@ td {
   flex-direction: column;
 }
 
+.exercice-list {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-direction: column;
+}
 .exercice {
   border-radius: 10px;
   width: 70%;
