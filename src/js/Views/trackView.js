@@ -32,6 +32,7 @@ class TrackView extends View {
     if (this._workout?.classList.contains("active"))
       this._workout.classList.toggle("active");
     const temp = this?._workout;
+    app.stateWorkoutSelect(null)
     this._workout = document.querySelector(".workout.active");
     this._submit = document.querySelector(".submitWorkout.active");
 
@@ -53,9 +54,10 @@ class TrackView extends View {
         }
         if (e.key === "Escape") {
           this._submit.classList.toggle("active");
-          temp.classList.add('active')
+          temp?.classList.add("active");
           this._workout.remove();
           this._workout = temp;
+          app.stateWorkoutSelect(this._workout.dataset.id)
         }
       }.bind(this),
     );
@@ -90,13 +92,17 @@ class TrackView extends View {
     });
   }
 
-  searchWorkout() {
+  searchExercice() {
     this._searchBar.addEventListener(
-      "click",
+      "keydown",
       function (e) {
-        e.preventDefault();
-        app.addExercice("belire de caras");
-        this.renderWorkoutList();
+        if (e.key === "Enter") {
+          if (this._searchBar.value !== "") {
+            app.addExercice(this._searchBar.value);
+            this._searchBar.value = "";
+            this.renderWorkoutList();
+          }
+        }
       }.bind(this),
     );
   }

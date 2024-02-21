@@ -36,18 +36,12 @@ function init() {
   calendarView.addHandlerRender(controlModal);
   trackView.addHandlerRender(renderWorkout);
   trackView.selectWorkout();
-  trackView.searchWorkout()
+  trackView.searchExercice()
 }
 
 document.querySelector(".mama").addEventListener("click", function (e) {
   e.preventDefault();
   console.log(app.state);
-  app.addExercice('belire de caras')
-});
-
-document.querySelector(".tata").addEventListener("click", function (e) {
-  e.preventDefault();
-  trackView.addExercice();
 });
 
 init();
