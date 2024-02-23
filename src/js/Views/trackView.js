@@ -32,7 +32,7 @@ class TrackView extends View {
     if (this._workout?.classList.contains("active"))
       this._workout.classList.toggle("active");
     const temp = this?._workout;
-    app.stateWorkoutSelect(null)
+    app.stateWorkoutSelect(null);
     this._workout = document.querySelector(".workout.active");
     this._submit = document.querySelector(".submitWorkout.active");
 
@@ -57,7 +57,7 @@ class TrackView extends View {
           temp?.classList.add("active");
           this._workout.remove();
           this._workout = temp;
-          app.stateWorkoutSelect(this._workout.dataset.id)
+          app.stateWorkoutSelect(this._workout?.dataset.id);
         }
       }.bind(this),
     );
@@ -96,9 +96,10 @@ class TrackView extends View {
     this._searchBar.addEventListener(
       "keydown",
       function (e) {
+        if (!state._selectedWorkout) return;
         if (e.key === "Enter") {
           if (this._searchBar.value !== "") {
-            app.addExercice(this._searchBar.value);
+            console.log(app.search(this._searchBar.value));
             this._searchBar.value = "";
             this.renderWorkoutList();
           }

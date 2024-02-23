@@ -53,7 +53,7 @@ export const decreaseMonth = function () {
 export const calculateDate = function (
   year = state._selectedYear,
   month = state._selectedMonth,
-  day = new Date().getDate()
+  day = new Date().getDate(),
 ) {
   /*We calculate the total amount of days in a month by referring to the next month from which we subtract one day and the current month's first day*/
   const firstDayInMonth = new Date(
@@ -92,6 +92,25 @@ export const stateWorkoutSelect = function (workout) {
 };
 
 export const addExercice = function (ex) {
-  if (!state._selectedWorkout.Exercices) state._selectedWorkout.Exercices = []
-  state._selectedWorkout?.Exercices.push(ex)
+  if (!state._selectedWorkout.Exercices) state._selectedWorkout.Exercices = [];
+  state._selectedWorkout?.Exercices.push(ex);
+};
+
+export const search = async function (searchInput) {
+  try {
+    const api_data = await fetch(
+      `https://exercisedb.p.rapidapi.com/exercises/name/${searchInput}`,
+      {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "f6054408b3msh40729f61b8a77a6p17de8ajsn0ee3785396bb",
+          "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+        },
+      },
+    );
+    return await api_data.json();
+  } catch (e) {
+    console.error(e);
+  }
 };

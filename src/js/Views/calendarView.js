@@ -6,7 +6,8 @@ class CalendarView extends View {
 
   renderDates(app) {
     /*First import the date variables from the calcDate function*/
-    const [paddingDays, daysInMonth, year, month, months, day] = app.calculateDate();
+    const [paddingDays, daysInMonth, year, month, months, day] =
+      app.calculateDate();
     /*Render the month using the current month and the index of the months array*/
     this._monthText.innerHTML = months[month];
     /*Render the calendar taking into account the padding days and total days of the month*/
@@ -19,8 +20,12 @@ class CalendarView extends View {
         let cell = row.cells[j];
         cell.classList.add("day");
         cell.style.backgroundColor = "white";
-        if (daynumber === day && month === new Date().getMonth() && year === new Date().getFullYear()) {
-          cell.style.backgroundColor = 'green'
+        if (
+          daynumber === day &&
+          month === new Date().getMonth() &&
+          year === new Date().getFullYear()
+        ) {
+          cell.style.backgroundColor = "green";
         }
         if (daynumber > daysInMonth) {
           daynumber = i * 7 + j + 1 - paddingDays - daysInMonth;

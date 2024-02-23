@@ -36,7 +36,7 @@ body {
 
 #search {
   border: solid 1px #862e9c;
-  width: 70%;
+  width: 60%;
   padding: 7px;
   border-radius: 5px;
 }
@@ -173,6 +173,7 @@ td {
   align-items: center;
   flex-shrink: 0;
   overflow-y: scroll;
+  margin-top: 10px;
 }
 
 .workout {
