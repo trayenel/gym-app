@@ -5,15 +5,29 @@ import { state } from "../app.js";
 class TrackView extends View {
   _main = document.querySelector(".track-view");
   _tracker = document.querySelector(".tracker");
+  _trackMenu = document.querySelector('.track-menu')
   _exercicesList = document.querySelector(".exercice-list");
+  _addedExercices = document.querySelector('.added-exercices')
   _workoutAdder = document.querySelector(".add-workout");
   _searchBar = document.getElementById("search");
   _workout;
   _submit;
+
   addHandlerRender(handler) {
     this._tracker.addEventListener("click", function (e) {
       if (e.target.classList.contains("icon")) handler();
     });
+  }
+
+  addEx() {
+    this._trackMenu.addEventListener('click', function (e) {
+      if (e.target.classList.contains('list-element')) {
+        app.addExercice(e.target.innerHTML);
+        this.renderAddedExercices();
+        this._searchBar.innerHTML = "";
+        this._exercicesList.innerHTML = "";
+      }
+    }.bind(this))
   }
 
   renderWorkout() {
@@ -49,7 +63,7 @@ class TrackView extends View {
               this._workout.innerHTML,
             );
             app.stateWorkoutSelect(this._workout.dataset.id);
-            this.renderWorkoutList();
+            this.renderAddedExercices();
           }
         }
         if (e.key === "Escape") {
@@ -77,33 +91,33 @@ class TrackView extends View {
           this._workout = e.target;
           this._workout.classList.toggle("active");
           app.stateWorkoutSelect(this._workout.dataset.id);
-          this.renderWorkoutList();
+          this.renderAddedExercices();
         }
       }.bind(this),
     );
   }
-  renderWorkoutList() {
-    this._exercicesList.innerHTML = "";
+
+  renderAddedExercices() {
+    this._addedExercices.innerHTML = "";
     if (!state._selectedWorkout.Exercices) return;
 
-    state._selectedWorkout.Exercices.forEach((wk) => {
-      const html = `<span class="exercice">${wk}</span>`;
-      this._exercicesList.insertAdjacentHTML("afterbegin", html);
+    state._selectedWorkout.Exercices.forEach((ex) => {
+      const html = `<span class="exercice">${ex}</span>`;
+      this._addedExercices.insertAdjacentHTML("beforeend", html);
     });
   }
 
-  searchExercice() {
+  renderExercicesSearch() {
     this._searchBar.addEventListener(
-      "keydown",
+      "keyup",
       function (e) {
         if (!state._selectedWorkout) return;
-        if (e.key === "Enter") {
-          if (this._searchBar.value !== "") {
-            console.log(app.search(this._searchBar.value));
-            this._searchBar.value = "";
-            this.renderWorkoutList();
-          }
-        }
+        this._exercicesList.innerHTML = ""
+        app.search(this._searchBar.value).then((data) => {
+                for (let i = 0; i < data.length; i++) {
+                  this._exercicesList.innerHTML += `<li class="list-element">${data[i].name}</li>`;
+                }
+            })
       }.bind(this),
     );
   }

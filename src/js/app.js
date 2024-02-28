@@ -92,7 +92,9 @@ export const stateWorkoutSelect = function (workout) {
 };
 
 export const addExercice = function (ex) {
-  if (!state._selectedWorkout.Exercices) state._selectedWorkout.Exercices = [];
+  if (!state._selectedWorkout) return
+    if (!state._selectedWorkout.Exercices)
+      state._selectedWorkout.Exercices = [];
   state._selectedWorkout?.Exercices.push(ex);
 };
 

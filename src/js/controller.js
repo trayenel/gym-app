@@ -36,7 +36,8 @@ function init() {
   calendarView.addHandlerRender(controlModal);
   trackView.addHandlerRender(renderWorkout);
   trackView.selectWorkout();
-  trackView.searchExercice()
+  trackView.renderExercicesSearch()
+  trackView.addEx()
 }
 
 document.querySelector(".mama").addEventListener("click", function (e) {
@@ -45,3 +46,4 @@ document.querySelector(".mama").addEventListener("click", function (e) {
 });
 
 init();
+

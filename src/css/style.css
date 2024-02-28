@@ -149,7 +149,7 @@ td {
   flex-direction: column;
 }
 
-.exercice-list {
+.added-exercices {
   width: 100%;
   display: flex;
   gap: 10px;
@@ -157,6 +157,12 @@ td {
   flex-grow: 0;
   flex-direction: column;
 }
+
+.exercice-list {
+  list-style: none;
+  width: 60%;
+}
+
 .exercice {
   border-radius: 10px;
   width: 70%;
@@ -165,7 +171,6 @@ td {
 }
 
 .tracker {
-  height: 100%;
   width: 30%;
   display: flex;
   gap: 20px;
