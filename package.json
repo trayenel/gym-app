@@ -15,7 +15,7 @@
     "url": "https://github.com/trayenel/gym-app/issues"
   },
   "homepage": "https://github.com/trayenel/gym-app#readme",
-  "dependencies": {
+  "devDependencies": {
     "prettier": "^3.2.5"
   }
 }

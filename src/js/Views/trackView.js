@@ -5,11 +5,12 @@ import { state } from "../app.js";
 class TrackView extends View {
   _main = document.querySelector(".track-view");
   _tracker = document.querySelector(".tracker");
-  _trackMenu = document.querySelector('.track-menu')
+  _trackMenu = document.querySelector(".track-menu");
   _exercicesList = document.querySelector(".exercice-list");
-  _addedExercices = document.querySelector('.added-exercices')
+  _addedExercices = document.querySelector(".added-exercices");
   _workoutAdder = document.querySelector(".add-workout");
   _searchBar = document.getElementById("search");
+  _dateMenu;
   _workout;
   _submit;
 
@@ -20,36 +21,40 @@ class TrackView extends View {
   }
 
   addEx() {
-    this._trackMenu.addEventListener('click', function (e) {
-      if (e.target.classList.contains('list-element')) {
-        app.addExercice(e.target.innerHTML);
-        this.renderAddedExercices();
-        this._searchBar.innerHTML = "";
-        this._exercicesList.innerHTML = "";
-      }
-    }.bind(this))
+    this._trackMenu.addEventListener(
+      "click",
+      function (e) {
+        if (e.target.classList.contains("list-element")) {
+          app.addExercice(e.target.innerHTML);
+          this.renderAddedExercices();
+          this._searchBar.innerHTML = "";
+          this._exercicesList.innerHTML = "";
+        }
+      }.bind(this),
+    );
   }
 
   renderWorkout() {
     const htmltext = `<span data-id=${Math.random().toString(36).slice(2, 9)} class="workout active"
             ><label for="submitWorkout"></label>
-            <input type="text" class="submitWorkout active"
-          /></span>`;
-
+            <label for="date"></label>
+            <input type="text" class="submitWorkout active"/>
+            <input id="date" type="date"/></span>`;
     if (!this._submit?.classList.contains("active")) {
       this._workoutAdder.insertAdjacentHTML("beforebegin", htmltext);
-      this.nameWorkout();
+      this._dateMenu = document.getElementById("date");
+      const date = this.setDate();
+      this.addWorkout(date);
     }
   }
 
-  nameWorkout() {
+  addWorkout(date) {
     if (this._workout?.classList.contains("active"))
       this._workout.classList.toggle("active");
     const temp = this?._workout;
     app.stateWorkoutSelect(null);
     this._workout = document.querySelector(".workout.active");
     this._submit = document.querySelector(".submitWorkout.active");
-
     this._submit.focus();
     this._submit.addEventListener(
       "keydown",
@@ -61,6 +66,7 @@ class TrackView extends View {
             app.createNewWorkout(
               this._workout.dataset.id,
               this._workout.innerHTML,
+              date,
             );
             app.stateWorkoutSelect(this._workout.dataset.id);
             this.renderAddedExercices();
@@ -111,15 +117,21 @@ class TrackView extends View {
     this._searchBar.addEventListener(
       "keyup",
       function (e) {
-        if (!state._selectedWorkout) return;
-        this._exercicesList.innerHTML = ""
+        if (!state._selectedWorkout || this._searchBar.value.length < 3) return;
+        console.log("merge");
+        this._exercicesList.innerHTML = "";
         app.search(this._searchBar.value).then((data) => {
-                for (let i = 0; i < data.length; i++) {
-                  this._exercicesList.innerHTML += `<li class="list-element">${data[i].name}</li>`;
-                }
-            })
+          for (let i = 0; i < data.length; i++) {
+            this._exercicesList.innerHTML += `<li class="list-element">${data[i].name}</li>`;
+          }
+        });
       }.bind(this),
     );
+  }
+
+  setDate() {
+    this._dateMenu.valueAsDate = new Date();
+    return this._dateMenu.valueAsDate.toDateString();
   }
 }
 

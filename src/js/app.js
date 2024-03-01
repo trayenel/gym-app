@@ -80,9 +80,10 @@ export const calculateDate = function (
   return [paddingDays, daysInMonth, year, month, state._months, day];
 };
 
-export const createNewWorkout = function (id, name) {
+export const createNewWorkout = function (id, name, date) {
   const workout = {
     name: name,
+    date: date
   };
   state._workouts.set(`${id}`, workout);
 };
@@ -92,9 +93,8 @@ export const stateWorkoutSelect = function (workout) {
 };
 
 export const addExercice = function (ex) {
-  if (!state._selectedWorkout) return
-    if (!state._selectedWorkout.Exercices)
-      state._selectedWorkout.Exercices = [];
+  if (!state._selectedWorkout) return;
+  if (!state._selectedWorkout.Exercices) state._selectedWorkout.Exercices = [];
   state._selectedWorkout?.Exercices.push(ex);
 };
 
@@ -116,3 +116,4 @@ export const search = async function (searchInput) {
     console.error(e);
   }
 };
+

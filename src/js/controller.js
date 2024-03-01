@@ -36,14 +36,16 @@ function init() {
   calendarView.addHandlerRender(controlModal);
   trackView.addHandlerRender(renderWorkout);
   trackView.selectWorkout();
-  trackView.renderExercicesSearch()
-  trackView.addEx()
+  trackView.renderExercicesSearch();
+  trackView.addEx();
 }
 
 document.querySelector(".mama").addEventListener("click", function (e) {
   e.preventDefault();
   console.log(app.state);
 });
+
+
 
 init();
 
