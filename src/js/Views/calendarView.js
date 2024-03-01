@@ -3,7 +3,6 @@ import View from "./View.js";
 class CalendarView extends View {
   _main = document.querySelector(".calendar");
   _monthText = document.querySelector(".month");
-
   renderDates(app) {
     /*First import the date variables from the calcDate function*/
     const [paddingDays, daysInMonth, year, month, months, day] =
@@ -24,14 +23,15 @@ class CalendarView extends View {
           daynumber === day &&
           month === new Date().getMonth() &&
           year === new Date().getFullYear()
-        ) {
+        )
           cell.style.backgroundColor = "green";
-        }
+
         if (daynumber > daysInMonth) {
           daynumber = i * 7 + j + 1 - paddingDays - daysInMonth;
           cell.style.backgroundColor = "grey";
           cell.classList.toggle("day");
         }
+
         if (daynumber <= 0) {
           cell.style.backgroundColor = "grey";
           cell.classList.toggle("day");

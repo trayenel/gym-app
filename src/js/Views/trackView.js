@@ -42,13 +42,13 @@ class TrackView extends View {
             <input id="date" type="date"/></span>`;
     if (!this._submit?.classList.contains("active")) {
       this._workoutAdder.insertAdjacentHTML("beforebegin", htmltext);
-      this._dateMenu = document.getElementById("date");
-      const date = this.setDate();
-      this.addWorkout(date);
+
+      this.addWorkout();
     }
   }
 
-  addWorkout(date) {
+  addWorkout() {
+    this.getDate();
     if (this._workout?.classList.contains("active"))
       this._workout.classList.toggle("active");
     const temp = this?._workout;
@@ -66,7 +66,7 @@ class TrackView extends View {
             app.createNewWorkout(
               this._workout.dataset.id,
               this._workout.innerHTML,
-              date,
+              this.setDate().toDateString(),
             );
             app.stateWorkoutSelect(this._workout.dataset.id);
             this.renderAddedExercices();
@@ -129,9 +129,17 @@ class TrackView extends View {
     );
   }
 
-  setDate() {
+  getDate() {
+    this._dateMenu = document.getElementById("date");
     this._dateMenu.valueAsDate = new Date();
-    return this._dateMenu.valueAsDate.toDateString();
+  }
+  setDate() {
+    let date = this._dateMenu.valueAsDate;
+    this._dateMenu.addEventListener(
+      "change",
+      (e) => (date = this._dateMenu.valueAsDate),
+    );
+    return date;
   }
 }
 

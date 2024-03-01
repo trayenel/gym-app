@@ -42,7 +42,7 @@ function init() {
 
 document.querySelector(".mama").addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(app.state);
+  console.log(app.state._workouts);
 });
 
 
