@@ -29,6 +29,7 @@ class TrackView extends View {
           this.renderAddedExercices();
           this._searchBar.innerHTML = "";
           this._exercicesList.innerHTML = "";
+          console.log(this);
         }
       }.bind(this),
     );

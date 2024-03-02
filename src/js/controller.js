@@ -45,7 +45,4 @@ document.querySelector(".mama").addEventListener("click", function (e) {
   console.log(app.state._workouts);
 });
 
-
-
 init();
-
